@@ -1,0 +1,37 @@
+
+package org.example;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.printf("Hello and welcome!\n");
+        int nomVec1[]={1,2,3,3,4,5,6,7,8,9,10};
+        //for (int dato:nomVec1) {
+        //    System.out.println(dato);
+        //}
+        Persona nomVec2[]={new Persona("Pancho", "", 'M'),
+                new Persona("Amelia", "", 'F')};
+        System.out.println("Resgistro de Asistencia");
+        Scanner nou=new Scanner(System.in);
+        for (Persona dper:nomVec2) {
+            System.out.println("Esta presente ¿ "+dper.nombre+"? : ");
+            //dper.estadoAsis= nou.nextLine();
+            dper.fecha=new Date();
+            dper.setEstadoAsis(nou.nextLine());
+
+            //
+        }
+        System.out.println("Mostror registro de asistencia ");
+        for (Persona dper:nomVec2) {
+
+            //System.out.println(dper.nombre + " - " + dper.estadoAsis);
+            System.out.println(dper.getNombre() + " - " + dper.estadoAsis+ " - "+ dper.genero+" - "+dper.fecha);
+
+        }
+
+
+
+    }
+}
