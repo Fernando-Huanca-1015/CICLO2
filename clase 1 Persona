@@ -1,4 +1,3 @@
-
 package org.example;
 
 import java.util.Date;
@@ -6,8 +5,22 @@ import java.util.Date;
 public class Persona {
     protected String nombre;
     protected String estadoAsis;
-    protected char genero;
-    protected Date fecha;
+    char genero;
+    Date fechaReg;
+
+    public Persona(){}
+
+    public Persona(String nombre, String estadoAsis, Date fechaReg){
+        this.nombre = nombre;
+        this.estadoAsis = estadoAsis;
+        this.fechaReg = fechaReg;
+    }
+
+    public Persona(String nombre, String estadoAsis, char genero) {
+        this.nombre = nombre;
+        this.estadoAsis = estadoAsis;
+        this.genero=genero;
+    }
 
     public String getNombre() {
         return nombre;
@@ -24,16 +37,9 @@ public class Persona {
     public void setEstadoAsis(String estadoAsis) {
         this.estadoAsis = estadoAsis;
     }
-    public char getgenero(){
-        return genero;
-    }
-    public void setGenero(char genero){
-        this.genero=genero;
-    }
 
-    public Persona(String nombre, String estadoAsis, char genero) {
-        this.nombre = nombre;
-        this.estadoAsis = estadoAsis;
-        this.genero = genero;
+    @Override
+    public String toString() {
+        return this.nombre +"\t"+ this.estadoAsis +"\t"+ this.fechaReg;
     }
 }
